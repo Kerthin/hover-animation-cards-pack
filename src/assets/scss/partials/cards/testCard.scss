@@ -1,0 +1,17 @@
+/*____________________________________________________________
+# Slide Button Variables
+____________________________________________________________*/
+$testCardWidth: 200px;
+$testCardHeight: $testCardWidth * 1.6;
+
+/*____________________________________________________________
+# Slide Button
+____________________________________________________________*/
+.testCard {
+  position: relative;
+  margin: 20px;
+  width: $testCardWidth;
+  height: $testCardHeight;
+  background-color: lightblue;
+  cursor: pointer;
+}

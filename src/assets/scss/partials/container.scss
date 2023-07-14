@@ -11,3 +11,42 @@
   text-align: center;
   margin-bottom: 20px;
 }
+
+.presentWrap {
+  position: relative;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);
+  z-index: 1;
+}
+.presentWrap__title {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.presentWrap__link {
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  margin-bottom: 10px;
+  
+  a {
+    font-family: 'Roboto', sans-serif;
+    color: #d52e3f;
+    text-decoration: none;
+  }
+}
+.presentWrap__cardsBlock {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  
+  &._column {
+    flex-direction: column;
+  }
+}

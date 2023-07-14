@@ -2,6 +2,7 @@
 
 # Container
 # @import Buttons Styles
+  ## @import slideBtn.scss
 
 ____________________________________________________________*/
 /*____________________________________________________________
@@ -22,6 +23,76 @@ ____________________________________________________________*/
     margin-bottom: 20px;
 }
 
+.presentWrap {
+    position: relative;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    width: 100%;
+    background: #fff;
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    z-index: 1;
+}
+
+.presentWrap__title {
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.presentWrap__link {
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.presentWrap__link a {
+    font-family: "Roboto", sans-serif;
+    color: #d52e3f;
+    text-decoration: none;
+}
+
+.presentWrap__cardsBlock {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+}
+
+.presentWrap__cardsBlock._column {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
 /*____________________________________________________________
 # @import 'Other' Styles
 ____________________________________________________________*/
+/*____________________________________________________________
+## @import testCard.scss
+____________________________________________________________*/
+/*____________________________________________________________
+# Slide Button Variables
+____________________________________________________________*/
+/*____________________________________________________________
+# Slide Button
+____________________________________________________________*/
+.testCard {
+    position: relative;
+    margin: 20px;
+    width: 200px;
+    height: 320px;
+    background-color: lightblue;
+    cursor: pointer;
+}
