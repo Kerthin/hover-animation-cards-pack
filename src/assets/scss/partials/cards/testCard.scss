@@ -4,6 +4,11 @@ ____________________________________________________________*/
 $testCardWidth: 200px;
 $testCardHeight: $testCardWidth * 1.6;
 
+$testCardPadding: calc($testCardWidth / 10);
+
+$testCard__innerWidth: $testCardWidth - $testCardPadding;
+$testCard__innerHeight: $testCardHeight - $testCardPadding;
+
 /*____________________________________________________________
 # Slide Button
 ____________________________________________________________*/
@@ -14,4 +19,26 @@ ____________________________________________________________*/
   height: $testCardHeight;
   background-color: lightblue;
   cursor: pointer;
+}
+.inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: $testCard__innerWidth;
+  height: $testCard__innerHeight;
+  background: gray;
+}
+.inner__img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  // height: 100%;
+  background: #fffaaa;
+}
+.inner__info {
+  position: relative;
+  width: 100%;
+  height: calc(#{$testCard__innerHeight} - #{$testCard__innerWidth});
+  background: #000;
 }

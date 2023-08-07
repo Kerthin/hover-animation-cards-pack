@@ -96,3 +96,29 @@ ____________________________________________________________*/
     background-color: lightblue;
     cursor: pointer;
 }
+
+.inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 300px;
+    background: gray;
+}
+
+.inner__img {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1;
+    background: #fffaaa;
+}
+
+.inner__info {
+    position: relative;
+    width: 100%;
+    height: calc(300px - 180px);
+    background: #000;
+}
