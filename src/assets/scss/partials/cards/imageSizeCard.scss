@@ -1,0 +1,97 @@
+/*____________________________________________________________
+# Slide Button Variables
+____________________________________________________________*/
+$imageSizeWidth: 200px;
+$imageSizeHeight: $imageSizeWidth * 1.6;
+
+$imageSizePadding: calc($imageSizeWidth / 10);
+
+$imageSize__innerWidth: $imageSizeWidth - $imageSizePadding;
+$imageSize__innerHeight: $imageSizeHeight - $imageSizePadding;
+
+$imageSize__lineHeight: calc($imageSize__innerHeight / 200);
+
+$imageSize__infoMargin: calc($imageSize__innerHeight / 20);
+
+$imageSizeFont: calc($imageSize__innerHeight / 10.7);
+
+/*____________________________________________________________
+# Slide Button
+____________________________________________________________*/
+.imageSizeCard {
+  position: relative;
+  margin: 20px;
+  width: $imageSizeWidth;
+  height: $imageSizeHeight;
+  background-color: #e3e1e3;
+  cursor: pointer;
+
+  &._dark {
+    background-color: #323033;
+
+    .imageSizeInner__img {
+      background-image: url('../img/cards/imageSize/lightTriangle.jpg')
+    }
+    .imageSizeInner__title,
+    .imageSizeInner__footer {
+      color: #e6e4e6;
+    }
+    .imageSizeInner__line {
+      background-color: #e6e4e6;
+    }
+  }
+
+  &:hover {
+    .imageSizeInner__img {
+      background-size: 130%;
+    }
+  }
+}
+.imageSizeInner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: $imageSize__innerWidth;
+  height: $imageSize__innerHeight;
+}
+.imageSizeInner__img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-image: url('../img/cards/imageSize/darkTriangle.jpg');
+  background-position: center;
+  background-size: 100%;
+  transition: background-size .3s;
+}
+.imageSizeInner__info {
+  padding-top: $imageSize__infoMargin;
+  position: relative;
+  width: 100%;
+  height: calc(#{$imageSize__innerHeight} - #{$imageSize__innerWidth});
+}
+.imageSizeInner__title {
+  font-family: 'Roboto', sans-serif;
+  font-size: $imageSizeFont;
+  color: #363437;
+}
+.imageSizeInner__line {
+  margin: $imageSize__infoMargin 0;
+  width: 100%;
+  height: $imageSize__lineHeight;
+  background-color: #363437;
+}
+.imageSizeInner__footer {
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-size: calc(#{$imageSizeFont} / 2);
+  color: #363437;
+}
+.imageSizeInner__name {
+  display: inline;
+  float: left;
+}
+.imageSizeInner__number {
+  display: inline;
+  float: right;
+}

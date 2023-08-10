@@ -79,7 +79,7 @@ ____________________________________________________________*/
 # @import 'Other' Styles
 ____________________________________________________________*/
 /*____________________________________________________________
-## @import testCard.scss
+## @import imageSizeCard.scss
 ____________________________________________________________*/
 /*____________________________________________________________
 # Slide Button Variables
@@ -87,7 +87,7 @@ ____________________________________________________________*/
 /*____________________________________________________________
 # Slide Button
 ____________________________________________________________*/
-.testCard {
+.imageSizeCard {
     position: relative;
     margin: 20px;
     width: 200px;
@@ -96,28 +96,28 @@ ____________________________________________________________*/
     cursor: pointer;
 }
 
-.testCard._dark {
+.imageSizeCard._dark {
     background-color: #323033;
 }
 
-.testCard._dark .inner__img {
-    background-image: url("../img/cards/testCard/lightTriangle.jpg");
+.imageSizeCard._dark .imageSizeInner__img {
+    background-image: url("../img/cards/imageSize/lightTriangle.jpg");
 }
 
-.testCard._dark .inner__title,
-.testCard._dark .inner__bot {
+.imageSizeCard._dark .imageSizeInner__title,
+.imageSizeCard._dark .imageSizeInner__footer {
     color: #e6e4e6;
 }
 
-.testCard._dark .inner__line {
+.imageSizeCard._dark .imageSizeInner__line {
     background-color: #e6e4e6;
 }
 
-.testCard:hover .inner__img {
+.imageSizeCard:hover .imageSizeInner__img {
     background-size: 130%;
 }
 
-.inner {
+.imageSizeInner {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -128,50 +128,50 @@ ____________________________________________________________*/
     height: 300px;
 }
 
-.inner__img {
+.imageSizeInner__img {
     position: relative;
     width: 100%;
     aspect-ratio: 1/1;
-    background-image: url("../img/cards/testCard/darkTriangle.jpg");
+    background-image: url("../img/cards/imageSize/darkTriangle.jpg");
     background-position: center;
     background-size: 100%;
     -webkit-transition: background-size 0.3s;
     transition: background-size 0.3s;
 }
 
-.inner__info {
+.imageSizeInner__info {
     padding-top: 15px;
     position: relative;
     width: 100%;
     height: calc(300px - 180px);
 }
 
-.inner__title {
+.imageSizeInner__title {
     font-family: "Roboto", sans-serif;
     font-size: 28.0373831776px;
     color: #363437;
 }
 
-.inner__line {
+.imageSizeInner__line {
     margin: 15px 0;
     width: 100%;
     height: 1.5px;
     background-color: #363437;
 }
 
-.inner__bot {
+.imageSizeInner__footer {
     width: 100%;
     font-family: "Roboto", sans-serif;
     font-size: calc(28.0373831776px / 2);
     color: #363437;
 }
 
-.inner__name {
+.imageSizeInner__name {
     display: inline;
     float: left;
 }
 
-.inner__number {
+.imageSizeInner__number {
     display: inline;
     float: right;
 }

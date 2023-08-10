@@ -1,0 +1,23 @@
+section.presentWrap
+  h1.presentWrap__title Image Size Cards
+  p.presentWrap__link Design by: 
+    a(href="https://weandthecolor.com/pathetic-experience-minimalist-album-posters-dhimas-zoso/87396") Dhimas Zoso
+  p.presentWrap__link Font by: 
+    a(href="https://fonts.google.com/?query=Christian+Robertson") Christian Robertson
+  p.presentWrap__link Google font-family: 
+      a(href="https://fonts.google.com/specimen/Roboto?preview.text=pathetic%20experience.&preview.text_type=custom") 'Roboto'
+  .presentWrap__cardsBlock
+
+    mixin imageSizeCardMix(cardMod, cardTitleStart, cardTitleEnd, cardName, cardNum)
+      .imageSizeCard(class=`${cardMod}`)
+        .imageSizeInner
+          .imageSizeInner__img
+          .imageSizeInner__info
+            h1.imageSizeInner__title #{cardTitleStart} <br> #{cardTitleEnd}
+            .imageSizeInner__line
+            .imageSizeInner__footer
+              p.imageSizeInner__name #{cardName}
+              p.imageSizeInner__number #{cardNum}
+
+    +imageSizeCardMix('', 'pathetic', 'experience.', 'Rikala Semana', '02')
+    +imageSizeCardMix('_dark', 'pathetic', 'experience.', 'Anylr', '03')
