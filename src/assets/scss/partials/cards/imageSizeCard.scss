@@ -16,6 +16,12 @@ $imageSize__infoMargin: calc($imageSize__innerHeight / 20);
 $imageSizeFont: calc($imageSize__innerHeight / 10.7);
 
 /*____________________________________________________________
+# Color Variables
+____________________________________________________________*/
+$x-color-light: #e3e1e3;
+$x-color-black: #363437;
+
+/*____________________________________________________________
 # Slide Button
 ____________________________________________________________*/
 .imageSizeCard {
@@ -23,21 +29,21 @@ ____________________________________________________________*/
   margin: 20px;
   width: $imageSizeWidth;
   height: $imageSizeHeight;
-  background-color: #e3e1e3;
+  background-color: $x-color-light;
   cursor: pointer;
 
   &._dark {
-    background-color: #323033;
+    background-color: $x-color-black;
 
     .imageSizeInner__img {
       background-image: url('../img/cards/imageSize/lightTriangle.jpg')
     }
     .imageSizeInner__title,
     .imageSizeInner__footer {
-      color: #e6e4e6;
+      color: $x-color-light;
     }
     .imageSizeInner__line {
-      background-color: #e6e4e6;
+      background-color: $x-color-light;
     }
   }
 
@@ -73,19 +79,19 @@ ____________________________________________________________*/
 .imageSizeInner__title {
   font-family: 'Roboto', sans-serif;
   font-size: $imageSizeFont;
-  color: #363437;
+  color: $x-color-black;
 }
 .imageSizeInner__line {
   margin: $imageSize__infoMargin 0;
   width: 100%;
   height: $imageSize__lineHeight;
-  background-color: #363437;
+  background-color: $x-color-black;
 }
 .imageSizeInner__footer {
   width: 100%;
   font-family: 'Roboto', sans-serif;
   font-size: calc(#{$imageSizeFont} / 2);
-  color: #363437;
+  color: $x-color-black;
 }
 .imageSizeInner__name {
   display: inline;
