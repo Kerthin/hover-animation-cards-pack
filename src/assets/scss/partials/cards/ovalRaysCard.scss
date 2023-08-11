@@ -2,9 +2,9 @@
 # Slide Button Variables
 ____________________________________________________________*/
 $ovalRaysCardWidth: 200px;
-$ovalRaysCardHeight: $imageSizeWidth * 1.6;
+$ovalRaysCardHeight: $ovalRaysCardWidth * 1.6;
 
-$ovalRaysCardPadding: calc($imageSizeWidth / 10);
+$ovalRaysCardPadding: calc($ovalRaysCardWidth / 10);
 
 $ovalRaysCard__innerWidth: $ovalRaysCardWidth - $ovalRaysCardPadding;
 $ovalRaysCard__innerHeight: $ovalRaysCardHeight - $ovalRaysCardPadding;
@@ -20,26 +20,26 @@ $x-color-green: #81885f;
 $palette-primary: $x-color-orange;
 $palette-secondary: $x-color-white;
 
-$raysBtnBorderColorArray: ($palette-primary, $palette-secondary, $x-color-yellow, $x-color-green);
+/*____________________________________________________________
+# Rays Variables
+____________________________________________________________*/
+$raysColorArray: ($palette-primary, $palette-secondary, $x-color-yellow, $x-color-green);
 
-// $raysBtnRayWidth: $ovalRaysCardHeight / 6.25;
-// $raysBtnRayHeight: $ovalRaysCardWidth / 1.25;
+$raysWidth: calc($ovalRaysCard__innerHeight / 12.5); // 24em
+$raysHeight: calc($ovalRaysCard__innerWidth / 1); // 180em
 
-$raysBtnRayWidth: 24em;
-$raysBtnRayHeight: 180em;
-
-$raysBtnItemDegree: 360deg / (6 * length($raysBtnBorderColorArray));
+$raysDegree: calc(360deg / (6 * length($raysColorArray)));
 
 @function strip-unit($number) {
     @if type-of($number) == 'number' and not unitless($number) {
-        @return $number / ($number * 0 + 1);
+        @return math.div($number, $number * 0 + 1);
     }
     @return $number;
 }
 
 /// Convert value to em.
 @function em($size, $base-font-size:16px) {
-    @return strip-unit($size) / strip-unit($base-font-size) * 1em;
+    @return calc(strip-unit($size) / strip-unit($base-font-size) * 1em);
 }
 
 /*____________________________________________________________
@@ -95,22 +95,22 @@ ____________________________________________________________*/
 .raysWrap__ray:after {
   position: absolute;
   border: 0 solid transparent;
-  border-width: em($raysBtnRayWidth) em($raysBtnRayHeight);
+  border-width: em($raysWidth) em($raysHeight);
   width: 0;
   height: 0;
 }
 .raysWrap__ray {
-  left: -#{em($raysBtnRayHeight)};
-  top: calc(50% - #{em($raysBtnRayWidth)});
+  left: -#{em($raysHeight)};
+  top: calc(50% - #{em($raysWidth)});
 
-  @for $i from 1 through length($raysBtnBorderColorArray) {
+  @for $i from 1 through length($raysColorArray) {
     &:nth-child(#{$i}){
-      transform: rotate(calc(#{$raysBtnItemDegree} * (#{$i} - 1)));
-      border-color: transparent nth($raysBtnBorderColorArray, $i);
+      transform: rotate(calc(#{$raysDegree} * (#{$i} - 1)));
+      border-color: transparent nth($raysColorArray, $i);
 
       &:before,
       &:after {
-        border-color: transparent nth($raysBtnBorderColorArray, $i);
+        border-color: transparent nth($raysColorArray, $i);
       }
     }
   }
@@ -118,8 +118,8 @@ ____________________________________________________________*/
 .raysWrap__ray:before,
 .raysWrap__ray:after {
   content: "";
-  left: -#{em($raysBtnRayHeight)};
-  top: -#{em($raysBtnRayWidth)};
+  left: -#{em($raysHeight)};
+  top: -#{em($raysWidth)};
 }
 
 .raysWrap__ray:before {
