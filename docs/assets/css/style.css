@@ -82,13 +82,13 @@ ____________________________________________________________*/
 ## @import imageSizeCard.scss
 ____________________________________________________________*/
 /*____________________________________________________________
-# Slide Button Variables
+# Image Size Variables
 ____________________________________________________________*/
 /*____________________________________________________________
 # Color Variables
 ____________________________________________________________*/
 /*____________________________________________________________
-# Slide Button
+# Image Size Card Style
 ____________________________________________________________*/
 .imageSizeCard {
     position: relative;
@@ -177,4 +177,146 @@ ____________________________________________________________*/
 .imageSizeInner__number {
     display: inline;
     float: right;
+}
+
+/*____________________________________________________________
+## @import ovalRaysCard.scss
+____________________________________________________________*/
+/*____________________________________________________________
+# Slide Button Variables
+____________________________________________________________*/
+/*____________________________________________________________
+# Color Variables
+____________________________________________________________*/
+/*____________________________________________________________
+# Image Size Card Style
+____________________________________________________________*/
+.ovalRaysCard {
+    position: relative;
+    margin: 20px;
+    width: 200px;
+    height: 320px;
+    background-color: #ba5f4e;
+    cursor: pointer;
+}
+
+.ovalRaysCard:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: calc(200px - 10px);
+    height: calc(320px - 10px);
+    border: 2.5px dotted #ead9b0;
+}
+
+.ovalRaysInner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 300px;
+    border-radius: 10px;
+    background-color: #ead9b0;
+    overflow: hidden;
+}
+
+.raysWrap {
+    position: absolute;
+    left: -1em;
+    right: -1em;
+    top: -1em;
+    bottom: -1em;
+    margin: auto;
+    padding: 0;
+    width: 0;
+    height: 0;
+    -webkit-animation: raysRotate 8s infinite linear;
+    animation: raysRotate 8s infinite linear;
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+.raysWrap__ray,
+.raysWrap__ray:before,
+.raysWrap__ray:after {
+    position: absolute;
+    border: 0 solid transparent;
+    border-width: 1.5em 11.25em;
+    width: 0;
+    height: 0;
+}
+
+.raysWrap__ray {
+    left: -11.25em;
+    top: calc(50% - 1.5em);
+}
+
+.raysWrap__ray:nth-child(1) {
+    -webkit-transform: rotate(calc(15deg * (1 - 1)));
+    -ms-transform: rotate(calc(15deg * (1 - 1)));
+    transform: rotate(calc(15deg * (1 - 1)));
+    border-color: transparent #ba5f4e;
+}
+
+.raysWrap__ray:nth-child(1):before, .raysWrap__ray:nth-child(1):after {
+    border-color: transparent #ba5f4e;
+}
+
+.raysWrap__ray:nth-child(2) {
+    -webkit-transform: rotate(calc(15deg * (2 - 1)));
+    -ms-transform: rotate(calc(15deg * (2 - 1)));
+    transform: rotate(calc(15deg * (2 - 1)));
+    border-color: transparent #ead9b0;
+}
+
+.raysWrap__ray:nth-child(2):before, .raysWrap__ray:nth-child(2):after {
+    border-color: transparent #ead9b0;
+}
+
+.raysWrap__ray:nth-child(3) {
+    -webkit-transform: rotate(calc(15deg * (3 - 1)));
+    -ms-transform: rotate(calc(15deg * (3 - 1)));
+    transform: rotate(calc(15deg * (3 - 1)));
+    border-color: transparent #d9ae65;
+}
+
+.raysWrap__ray:nth-child(3):before, .raysWrap__ray:nth-child(3):after {
+    border-color: transparent #d9ae65;
+}
+
+.raysWrap__ray:nth-child(4) {
+    -webkit-transform: rotate(calc(15deg * (4 - 1)));
+    -ms-transform: rotate(calc(15deg * (4 - 1)));
+    transform: rotate(calc(15deg * (4 - 1)));
+    border-color: transparent #81885f;
+}
+
+.raysWrap__ray:nth-child(4):before, .raysWrap__ray:nth-child(4):after {
+    border-color: transparent #81885f;
+}
+
+.raysWrap__ray:before,
+.raysWrap__ray:after {
+    content: "";
+    left: -11.25em;
+    top: -1.5em;
+}
+
+.raysWrap__ray:before {
+    -webkit-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    transform: rotate(60deg);
+}
+
+.raysWrap__ray:after {
+    -webkit-transform: rotate(-60deg);
+    -ms-transform: rotate(-60deg);
+    transform: rotate(-60deg);
 }

@@ -1,0 +1,130 @@
+/*____________________________________________________________
+# Slide Button Variables
+____________________________________________________________*/
+$ovalRaysCardWidth: 200px;
+$ovalRaysCardHeight: $imageSizeWidth * 1.6;
+
+$ovalRaysCardPadding: calc($imageSizeWidth / 10);
+
+$ovalRaysCard__innerWidth: $ovalRaysCardWidth - $ovalRaysCardPadding;
+$ovalRaysCard__innerHeight: $ovalRaysCardHeight - $ovalRaysCardPadding;
+
+/*____________________________________________________________
+# Color Variables
+____________________________________________________________*/
+$x-color-orange: #ba5f4e;
+$x-color-white: #ead9b0;
+$x-color-yellow: #d9ae65;
+$x-color-green: #81885f;
+
+$palette-primary: $x-color-orange;
+$palette-secondary: $x-color-white;
+
+$raysBtnBorderColorArray: ($palette-primary, $palette-secondary, $x-color-yellow, $x-color-green);
+
+// $raysBtnRayWidth: $ovalRaysCardHeight / 6.25;
+// $raysBtnRayHeight: $ovalRaysCardWidth / 1.25;
+
+$raysBtnRayWidth: 24em;
+$raysBtnRayHeight: 180em;
+
+$raysBtnItemDegree: 360deg / (6 * length($raysBtnBorderColorArray));
+
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+    @return $number;
+}
+
+/// Convert value to em.
+@function em($size, $base-font-size:16px) {
+    @return strip-unit($size) / strip-unit($base-font-size) * 1em;
+}
+
+/*____________________________________________________________
+# Image Size Card Style
+____________________________________________________________*/
+.ovalRaysCard {
+  position: relative;
+  margin: 20px;
+  width: $ovalRaysCardWidth;
+  height: $ovalRaysCardHeight;
+  background-color: $palette-primary;
+  cursor: pointer;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(#{$ovalRaysCardWidth} - 10px);
+    height: calc(#{$ovalRaysCardHeight} - 10px);
+    border: 2.5px dotted $palette-secondary;
+  }
+}
+.ovalRaysInner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: $ovalRaysCard__innerWidth;
+  height: $ovalRaysCard__innerHeight;
+  border-radius: 10px;
+  background-color: $palette-secondary;
+  overflow: hidden;
+}
+
+.raysWrap {
+  position: absolute;
+  left: -1em;
+  right: -1em;
+  top: -1em;
+  bottom: -1em;
+  margin: auto;
+  padding: 0;
+  width: 0;
+  height: 0;
+  animation: raysRotate 8s infinite linear;
+  animation-play-state: paused;
+}
+
+.raysWrap__ray,
+.raysWrap__ray:before,
+.raysWrap__ray:after {
+  position: absolute;
+  border: 0 solid transparent;
+  border-width: em($raysBtnRayWidth) em($raysBtnRayHeight);
+  width: 0;
+  height: 0;
+}
+.raysWrap__ray {
+  left: -#{em($raysBtnRayHeight)};
+  top: calc(50% - #{em($raysBtnRayWidth)});
+
+  @for $i from 1 through length($raysBtnBorderColorArray) {
+    &:nth-child(#{$i}){
+      transform: rotate(calc(#{$raysBtnItemDegree} * (#{$i} - 1)));
+      border-color: transparent nth($raysBtnBorderColorArray, $i);
+
+      &:before,
+      &:after {
+        border-color: transparent nth($raysBtnBorderColorArray, $i);
+      }
+    }
+  }
+}
+.raysWrap__ray:before,
+.raysWrap__ray:after {
+  content: "";
+  left: -#{em($raysBtnRayHeight)};
+  top: -#{em($raysBtnRayWidth)};
+}
+
+.raysWrap__ray:before {
+  transform: rotate(60deg);
+}
+.raysWrap__ray:after {
+  transform: rotate(-60deg);
+}

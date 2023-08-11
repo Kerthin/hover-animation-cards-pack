@@ -1,0 +1,12 @@
+section.presentWrap
+  h1.presentWrap__title Oval Rays Cards
+  p.presentWrap__link Design by: 
+    a(href="https://ru.pinterest.com/pin/659284832970710639/") Pinterest
+  .presentWrap__cardsBlock
+
+    .ovalRaysCard
+      .ovalRaysInner
+        .raysWrap
+          - var rayItemNumber = 1;
+          while rayItemNumber <= 4
+            .raysWrap__ray(id=`_${rayItemNumber++}`)
