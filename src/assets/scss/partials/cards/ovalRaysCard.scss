@@ -9,6 +9,9 @@ $ovalRaysCardPadding: calc($ovalRaysCardWidth / 10);
 $ovalRaysCard__innerWidth: $ovalRaysCardWidth - $ovalRaysCardPadding;
 $ovalRaysCard__innerHeight: $ovalRaysCardHeight - $ovalRaysCardPadding;
 
+$ovalRaysCard__ovarWidth: $ovalRaysCardWidth * .7;
+$ovalRaysCard__ovarHeight: $ovalRaysCardHeight * .7;
+
 /*____________________________________________________________
 # Color Variables
 ____________________________________________________________*/
@@ -62,6 +65,12 @@ ____________________________________________________________*/
     width: calc(#{$ovalRaysCardWidth} - 10px);
     height: calc(#{$ovalRaysCardHeight} - 10px);
     border: 2.5px dotted $palette-secondary;
+  }
+
+  &:hover {
+    .raysWrap {
+      animation-play-state: running;
+    }
   }
 }
 .ovalRaysInner {
@@ -127,4 +136,23 @@ ____________________________________________________________*/
 }
 .raysWrap__ray:after {
   transform: rotate(-60deg);
+}
+
+.raysOvalWrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: $ovalRaysCard__ovarWidth;
+  height: $ovalRaysCard__ovarHeight;
+  border-radius: 50%;
+  background-color: $palette-primary;
+  box-shadow: 4px 4px #673826;
+  overflow: hidden;
+}
+
+@keyframes raysRotate {
+  100% {
+    transform: rotate(360deg);
+  }
 }

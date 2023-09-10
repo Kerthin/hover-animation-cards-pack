@@ -216,6 +216,11 @@ ____________________________________________________________*/
     border: 2.5px dotted #ead9b0;
 }
 
+.ovalRaysCard:hover .raysWrap {
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+}
+
 .ovalRaysInner {
     position: absolute;
     top: 50%;
@@ -322,4 +327,34 @@ ____________________________________________________________*/
     -webkit-transform: rotate(-60deg);
     -ms-transform: rotate(-60deg);
     transform: rotate(-60deg);
+}
+
+.raysOvalWrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 140px;
+    height: 224px;
+    border-radius: 50%;
+    background-color: #ba5f4e;
+    -webkit-box-shadow: 4px 4px #673826;
+    box-shadow: 4px 4px #673826;
+    overflow: hidden;
+}
+
+@-webkit-keyframes raysRotate {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes raysRotate {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
 }
