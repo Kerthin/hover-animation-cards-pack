@@ -340,6 +340,10 @@ ____________________________________________________________*/
     height: 224px;
     border-radius: 50%;
     background-color: #ba5f4e;
+    background-image: url("../img/cards/ovalRaysCard/lethalThreat_wBg_sm.png");
+    background-position: 70% 120%;
+    background-size: 70%;
+    background-repeat: no-repeat;
     -webkit-box-shadow: 4px 4px #673826;
     box-shadow: 4px 4px #673826;
     overflow: hidden;
