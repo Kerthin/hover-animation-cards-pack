@@ -221,19 +221,19 @@ ____________________________________________________________*/
     animation-play-state: running;
 }
 
-.ovalRaysCard:hover .raysOvalUp {
+.ovalRaysCard:hover .ovalRaysInner__title {
     -webkit-transform: translate(-50%) scale(1);
     -ms-transform: translate(-50%) scale(1);
     transform: translate(-50%) scale(1);
 }
 
-.ovalRaysCard:hover .raysOvalMain {
+.ovalRaysCard:hover .ovalRaysInner__number {
     -webkit-transform: translate(-50%, -50%) scale(1);
     -ms-transform: translate(-50%, -50%) scale(1);
     transform: translate(-50%, -50%) scale(1);
 }
 
-.ovalRaysCard._ovalHide:hover .raysOvalWrap {
+.ovalRaysCard._ovalHide:hover .ovalRaysInner__oval {
     -webkit-transform: translate(-50%, -50%) scale(0);
     -ms-transform: translate(-50%, -50%) scale(0);
     transform: translate(-50%, -50%) scale(0);
@@ -255,6 +255,9 @@ ____________________________________________________________*/
     overflow: hidden;
 }
 
+/*____________________________________________________________
+## Rays Styles
+____________________________________________________________*/
 .raysWrap {
     position: absolute;
     left: -1em;
@@ -349,7 +352,23 @@ ____________________________________________________________*/
     transform: rotate(-60deg);
 }
 
-.raysOvalWrap {
+@-webkit-keyframes raysRotate {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes raysRotate {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+/*____________________________________________________________
+## Oval Styles
+____________________________________________________________*/
+.ovalRaysInner__oval {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -375,7 +394,7 @@ ____________________________________________________________*/
     transition-delay: 0.2s;
 }
 
-.raysOvalBtmEl {
+.ovalRaysInner__radio {
     position: absolute;
     bottom: 7%;
     left: 50%;
@@ -390,37 +409,32 @@ ____________________________________________________________*/
     background-repeat: no-repeat;
 }
 
-.raysOvalTitle {
+/*____________________________________________________________
+## Text Styles
+____________________________________________________________*/
+.ovalRaysInner__slogan {
     position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    font-family: "Lobster", cursive;
+    font-size: 14px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: #8a4c33;
+    text-shadow: 0.3px 0.3px #000;
+}
+
+.ovalRaysInner__slogan._t {
     top: 2%;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-    font-family: "Lobster", cursive;
-    font-size: 14px;
-    text-transform: uppercase;
-    white-space: nowrap;
-    color: #8a4c33;
-    text-shadow: 0.3px 0.3px #000;
 }
 
-.raysOvalEnd {
-    position: absolute;
+.ovalRaysInner__slogan._b {
     bottom: 1%;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-    font-family: "Lobster", cursive;
-    font-size: 14px;
-    text-transform: uppercase;
-    white-space: nowrap;
-    color: #8a4c33;
-    text-shadow: 0.3px 0.3px #000;
 }
 
-.raysOvalUp {
+.ovalRaysInner__title {
     position: absolute;
     top: 20%;
     left: 50%;
@@ -438,7 +452,7 @@ ____________________________________________________________*/
     transition: transform 0.2s, -webkit-transform 0.2s;
 }
 
-.raysOvalMain {
+.ovalRaysInner__number {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -456,31 +470,17 @@ ____________________________________________________________*/
     transition-delay: 0.2s;
 }
 
-.raysOvalMain__number:nth-child(1) {
+.ovalRaysInner__digit:nth-child(1) {
     color: #ead9b0;
     text-shadow: 6px 3px #ca9f37;
 }
 
-.raysOvalMain__number:nth-child(2) {
+.ovalRaysInner__digit:nth-child(2) {
     color: #d9ae65;
     text-shadow: 6px 3px #845f21;
 }
 
-.raysOvalMain__number:nth-child(3) {
+.ovalRaysInner__digit:nth-child(3) {
     color: #81885f;
     text-shadow: 6px 3px #2c2e20;
-}
-
-@-webkit-keyframes raysRotate {
-    100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes raysRotate {
-    100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
 }

@@ -75,17 +75,17 @@ ____________________________________________________________*/
     .raysWrap {
       animation-play-state: running;
     }
-    .raysOvalUp {
+    .ovalRaysInner__title {
       transform: translate(-50%) scale(1);
     }
-    .raysOvalMain {
+    .ovalRaysInner__number {
       transform: translate(-50%, -50%) scale(1);
     }
   }
 
   &._ovalHide {
     &:hover {
-      .raysOvalWrap {
+      .ovalRaysInner__oval {
         transform: translate(-50%, -50%) scale(0);
         transition-delay: 0s;
       }
@@ -104,6 +104,9 @@ ____________________________________________________________*/
   overflow: hidden;
 }
 
+/*____________________________________________________________
+## Rays Styles
+____________________________________________________________*/
 .raysWrap {
   position: absolute;
   left: -1em;
@@ -157,7 +160,16 @@ ____________________________________________________________*/
   transform: rotate(-60deg);
 }
 
-.raysOvalWrap {
+@keyframes raysRotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*____________________________________________________________
+## Oval Styles
+____________________________________________________________*/
+.ovalRaysInner__oval {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -176,23 +188,24 @@ ____________________________________________________________*/
   transition-delay: .2s;
 }
 
-.raysOvalBtmEl {
+.ovalRaysInner__radio {
   position: absolute;
   bottom: 7%;
   left: 50%;
   transform: translateX(-50%);
   width: 110px;
   height: 60px;
-  // background-color: blue;
   background-image: url('../img/cards/ovalRaysCard/retroRadio.png');
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
 }
 
-.raysOvalTitle {
+/*____________________________________________________________
+## Text Styles
+____________________________________________________________*/
+.ovalRaysInner__slogan {
   position: absolute;
-  top: 2%;
   left: 50%;
   transform: translateX(-50%);
   font-family: 'Lobster', cursive;
@@ -201,21 +214,16 @@ ____________________________________________________________*/
   white-space: nowrap;
   color: #8a4c33;
   text-shadow: .3px .3px #000;
-}
-.raysOvalEnd {
-  position: absolute;
-  bottom: 1%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: 'Lobster', cursive;
-  font-size: 14px;
-  text-transform: uppercase;
-  white-space: nowrap;
-  color: #8a4c33;
-  text-shadow: .3px .3px #000;
+
+  &._t {
+    top: 2%;
+  }
+  &._b {
+    bottom: 1%;
+  }
 }
 
-.raysOvalUp {
+.ovalRaysInner__title {
   position: absolute;
   top: 20%;
   left: 50%;
@@ -228,7 +236,7 @@ ____________________________________________________________*/
   transition: transform .2s;
 }
 
-.raysOvalMain {
+.ovalRaysInner__number {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -239,7 +247,7 @@ ____________________________________________________________*/
   transition: transform .2s;
   transition-delay: .2s;
 }
-.raysOvalMain__number {
+.ovalRaysInner__digit {
   &:nth-child(1) {
     color: $palette-secondary;
     text-shadow: 6px 3px $palette-secondary-dark;
@@ -251,11 +259,5 @@ ____________________________________________________________*/
   &:nth-child(3) {
     color: $x-color-green;
     text-shadow: 6px 3px $x-color-green-dark;
-  }
-}
-
-@keyframes raysRotate {
-  100% {
-    transform: rotate(360deg);
   }
 }
