@@ -6,11 +6,18 @@ $ovalRaysCardHeight: $ovalRaysCardWidth * 1.6;
 
 $ovalRaysCardPadding: calc($ovalRaysCardWidth / 10);
 
+$ovalRaysCardDotted: calc($ovalRaysCardWidth / 80);
+
 $ovalRaysCard__innerWidth: $ovalRaysCardWidth - $ovalRaysCardPadding;
 $ovalRaysCard__innerHeight: $ovalRaysCardHeight - $ovalRaysCardPadding;
 
-$ovalRaysCard__ovarWidth: $ovalRaysCardWidth * .7;
-$ovalRaysCard__ovarHeight: $ovalRaysCardHeight * .7;
+$ovalRaysCard__ovalWidth: $ovalRaysCardWidth * .7;
+$ovalRaysCard__ovalHeight: $ovalRaysCardHeight * .7;
+
+$ovalRaysFont: calc($ovalRaysCardWidth / 14.285);
+$ovalRaysFont_title: $ovalRaysFont * 1.72;
+
+$ovalRaysTime: .2s;
 
 /*____________________________________________________________
 # Color Variables
@@ -66,9 +73,9 @@ ____________________________________________________________*/
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: calc(#{$ovalRaysCardWidth} - 10px);
-    height: calc(#{$ovalRaysCardHeight} - 10px);
-    border: 2.5px dotted $palette-secondary;
+    width: calc(#{$ovalRaysCardWidth} - (#{$ovalRaysCardPadding} / 2));
+    height: calc(#{$ovalRaysCardHeight} - (#{$ovalRaysCardPadding} / 2));
+    border: $ovalRaysCardDotted dotted $palette-secondary;
   }
 
   &:hover {
@@ -99,7 +106,7 @@ ____________________________________________________________*/
   transform: translate(-50%, -50%);
   width: $ovalRaysCard__innerWidth;
   height: $ovalRaysCard__innerHeight;
-  border-radius: 10px;
+  border-radius: calc(#{$ovalRaysCardWidth} / 20);
   background-color: $palette-secondary;
   overflow: hidden;
 }
@@ -174,18 +181,18 @@ ____________________________________________________________*/
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  width: $ovalRaysCard__ovarWidth;
-  height: $ovalRaysCard__ovarHeight;
+  width: $ovalRaysCard__ovalWidth;
+  height: $ovalRaysCard__ovalHeight;
   border-radius: 50%;
   background-color: $palette-primary;
   background-image: url('../img/cards/ovalRaysCard/lethalThreat_wBg_sm.png');
   background-position: 70% 120%;
   background-size: 70%;
   background-repeat: no-repeat;
-  box-shadow: 2px 4px #673826;
+  box-shadow: calc(#{$ovalRaysCard__ovalWidth} / 70) calc(#{$ovalRaysCard__ovalHeight} / 56) #673826;
   overflow: hidden;
-  transition: transform .3s;
-  transition-delay: .2s;
+  transition: transform calc(#{$ovalRaysTime} * 1.5);
+  transition-delay: $ovalRaysTime;
 }
 
 .ovalRaysInner__radio {
@@ -193,8 +200,8 @@ ____________________________________________________________*/
   bottom: 7%;
   left: 50%;
   transform: translateX(-50%);
-  width: 110px;
-  height: 60px;
+  width: calc(#{$ovalRaysCard__innerWidth} / 1.636);
+  height: calc(#{$ovalRaysCard__innerHeight} / 5);
   background-image: url('../img/cards/ovalRaysCard/retroRadio.png');
   background-position: center;
   background-size: contain;
@@ -209,11 +216,11 @@ ____________________________________________________________*/
   left: 50%;
   transform: translateX(-50%);
   font-family: 'Lobster', cursive;
-  font-size: 14px;
+  font-size: $ovalRaysFont;
   text-transform: uppercase;
   white-space: nowrap;
   color: #8a4c33;
-  text-shadow: .3px .3px #000;
+  text-shadow: calc(#{$ovalRaysFont} / 46) calc(#{$ovalRaysFont} / 46) #000;
 
   &._t {
     top: 2%;
@@ -229,11 +236,11 @@ ____________________________________________________________*/
   left: 50%;
   transform: translateX(-50%) scale(0);
   font-family: 'Lobster', cursive;
-  font-size: 24px;
+  font-size: $ovalRaysFont_title;
   white-space: nowrap;
   color: #fff;
-  text-shadow: 2px 1px #000;
-  transition: transform .2s;
+  text-shadow: calc(#{$ovalRaysFont_title} / 12) calc(#{$ovalRaysFont_title} / 24) #000;
+  transition: transform $ovalRaysTime;
 }
 
 .ovalRaysInner__number {
@@ -242,22 +249,22 @@ ____________________________________________________________*/
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
   font-family: 'Lobster', cursive;
-  font-size: 96px;
-  letter-spacing: 10px;
-  transition: transform .2s;
-  transition-delay: .2s;
+  font-size: calc(#{$ovalRaysFont_title} * 4);
+  letter-spacing: calc((#{$ovalRaysFont_title} * 4) / 9.6);
+  transition: transform $ovalRaysTime;
+  transition-delay: $ovalRaysTime;
 }
 .ovalRaysInner__digit {
   &:nth-child(1) {
     color: $palette-secondary;
-    text-shadow: 6px 3px $palette-secondary-dark;
+    text-shadow: calc((#{$ovalRaysFont_title} * 4) / 16) calc((#{$ovalRaysFont_title} * 4) / 32) $palette-secondary-dark;
   }
   &:nth-child(2) {
     color: $x-color-yellow;
-    text-shadow: 6px 3px $x-color-yellow-dark;
+    text-shadow: calc((#{$ovalRaysFont_title} * 4) / 16) calc((#{$ovalRaysFont_title} * 4) / 32) $x-color-yellow-dark;
   }
   &:nth-child(3) {
     color: $x-color-green;
-    text-shadow: 6px 3px $x-color-green-dark;
+    text-shadow: calc((#{$ovalRaysFont_title} * 4) / 16) calc((#{$ovalRaysFont_title} * 4) / 32) $x-color-green-dark;
   }
 }

@@ -211,8 +211,8 @@ ____________________________________________________________*/
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    width: calc(200px - 10px);
-    height: calc(320px - 10px);
+    width: calc(200px - (20px / 2));
+    height: calc(320px - (20px / 2));
     border: 2.5px dotted #ead9b0;
 }
 
@@ -250,7 +250,7 @@ ____________________________________________________________*/
     transform: translate(-50%, -50%);
     width: 180px;
     height: 300px;
-    border-radius: 10px;
+    border-radius: calc(200px / 20);
     background-color: #ead9b0;
     overflow: hidden;
 }
@@ -383,13 +383,13 @@ ____________________________________________________________*/
     background-position: 70% 120%;
     background-size: 70%;
     background-repeat: no-repeat;
-    -webkit-box-shadow: 2px 4px #673826;
-    box-shadow: 2px 4px #673826;
+    -webkit-box-shadow: calc(140px / 70) calc(224px / 56) #673826;
+    box-shadow: calc(140px / 70) calc(224px / 56) #673826;
     overflow: hidden;
-    -webkit-transition: -webkit-transform 0.3s;
-    transition: -webkit-transform 0.3s;
-    transition: transform 0.3s;
-    transition: transform 0.3s, -webkit-transform 0.3s;
+    -webkit-transition: -webkit-transform calc(0.2s * 1.5);
+    transition: -webkit-transform calc(0.2s * 1.5);
+    transition: transform calc(0.2s * 1.5);
+    transition: transform calc(0.2s * 1.5), -webkit-transform calc(0.2s * 1.5);
     -webkit-transition-delay: 0.2s;
     transition-delay: 0.2s;
 }
@@ -401,8 +401,8 @@ ____________________________________________________________*/
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
-    width: 110px;
-    height: 60px;
+    width: calc(180px / 1.636);
+    height: calc(300px / 5);
     background-image: url("../img/cards/ovalRaysCard/retroRadio.png");
     background-position: center;
     background-size: contain;
@@ -419,11 +419,11 @@ ____________________________________________________________*/
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     font-family: "Lobster", cursive;
-    font-size: 14px;
+    font-size: 14.000700035px;
     text-transform: uppercase;
     white-space: nowrap;
     color: #8a4c33;
-    text-shadow: 0.3px 0.3px #000;
+    text-shadow: calc(14.000700035px / 46) calc(14.000700035px / 46) #000;
 }
 
 .ovalRaysInner__slogan._t {
@@ -442,10 +442,10 @@ ____________________________________________________________*/
     -ms-transform: translateX(-50%) scale(0);
     transform: translateX(-50%) scale(0);
     font-family: "Lobster", cursive;
-    font-size: 24px;
+    font-size: 24.0812040602px;
     white-space: nowrap;
     color: #fff;
-    text-shadow: 2px 1px #000;
+    text-shadow: calc(24.0812040602px / 12) calc(24.0812040602px / 24) #000;
     -webkit-transition: -webkit-transform 0.2s;
     transition: -webkit-transform 0.2s;
     transition: transform 0.2s;
@@ -460,8 +460,8 @@ ____________________________________________________________*/
     -ms-transform: translate(-50%, -50%) scale(0);
     transform: translate(-50%, -50%) scale(0);
     font-family: "Lobster", cursive;
-    font-size: 96px;
-    letter-spacing: 10px;
+    font-size: calc(24.0812040602px * 4);
+    letter-spacing: calc((24.0812040602px * 4) / 9.6);
     -webkit-transition: -webkit-transform 0.2s;
     transition: -webkit-transform 0.2s;
     transition: transform 0.2s;
@@ -472,15 +472,15 @@ ____________________________________________________________*/
 
 .ovalRaysInner__digit:nth-child(1) {
     color: #ead9b0;
-    text-shadow: 6px 3px #ca9f37;
+    text-shadow: calc((24.0812040602px * 4) / 16) calc((24.0812040602px * 4) / 32) #ca9f37;
 }
 
 .ovalRaysInner__digit:nth-child(2) {
     color: #d9ae65;
-    text-shadow: 6px 3px #845f21;
+    text-shadow: calc((24.0812040602px * 4) / 16) calc((24.0812040602px * 4) / 32) #845f21;
 }
 
 .ovalRaysInner__digit:nth-child(3) {
     color: #81885f;
-    text-shadow: 6px 3px #2c2e20;
+    text-shadow: calc((24.0812040602px * 4) / 16) calc((24.0812040602px * 4) / 32) #2c2e20;
 }
