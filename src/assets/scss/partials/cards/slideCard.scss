@@ -1,0 +1,94 @@
+/*____________________________________________________________
+# Slide Button Variables
+____________________________________________________________*/
+$slideCardWidth: 200px;
+$slideCardHeight: $slideCardWidth * 1.6;
+
+$slideContainerWidth: $slideCardWidth + ($slideCardWidth * .7);
+$slideContainerHeight: $slideCardHeight + ($slideCardHeight * .1875);
+
+$rainbowBtnItemWrapDegree: 30deg;
+
+/*____________________________________________________________
+# Color Variables
+____________________________________________________________*/
+$x-color-white: #f4e1d0;
+$x-color-orange: #f36f38;
+$x-color-juice: #ef4648;
+$x-color-cherry: #cc2a49;
+
+$palette-primary: $x-color-white;
+$palette-secondary: $x-color-white;
+
+/*____________________________________________________________
+# Image Size Card Style
+____________________________________________________________*/
+.slideCard {
+  position: relative;
+  margin: 20px;
+  width: $slideCardWidth;
+  height: $slideCardHeight;
+  background-color: $palette-primary;
+  cursor: pointer;
+  overflow: hidden;
+
+  &._lr {
+    .slideContainer {
+      transform: translate(-50%, -50%) rotate($rainbowBtnItemWrapDegree);
+    }
+  }
+  &._rl {
+    .slideContainer {
+      transform: translate(-50%, -50%) rotate(-$rainbowBtnItemWrapDegree);
+    }
+  }
+
+  &:hover {
+    .slideContainer__child {
+      height: 100%;
+
+      &:nth-child(1) {transition-delay: .0s}
+      &:nth-child(2) {transition-delay: .1s}
+      &:nth-child(3) {transition-delay: .2s}
+    }
+    .slideInfoWrap {
+      opacity: 1;
+      transition-delay: .4s;
+    }
+  }
+}
+.slideContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: $slideContainerWidth;
+  height: $slideContainerHeight;
+}
+.slideContainer__child {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 0%;
+  transition: height .3s;
+
+  &:nth-child(1) {background-color: $x-color-orange; transition-delay: .2s}
+  &:nth-child(2) {background-color: $x-color-juice; transition-delay: .1s}
+  &:nth-child(3) {background-color: $x-color-cherry; transition-delay: .0s}
+}
+
+.slideProfileWrap,
+.slideInfoWrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.slideProfileWrap {
+  // background: orange;
+}
+.slideInfoWrap {
+  background: $palette-primary;
+  opacity: 0;
+  transition: opacity .3s;
+  transition-delay: 0s;
+}
